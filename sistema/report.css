@@ -1,4 +1,75 @@
-* {
+
+body {
     margin: 0;
     padding: 0;
+    background-color: #f8f9fa;
+    font-family: Arial, sans-serif;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+}
+
+
+h2 {
+    margin-top: 20px;
+    font-size: 2rem;
+    color: #333;
+}
+
+
+#report-container {
+    width: 80%;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    margin: 20px auto;
+    padding: 12px 20px;
+    font-size: 1rem;
+    color: white;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    display: block;
+}
+
+button:hover {
+    transform: scale(1.05);
+    background-color: #0056b3;
+}
+
+#report-container p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #555;
+}
+
+/* Botão de Editar (cor azul) */
+.button-edit {
+    background-color: #007BFF;
+    color: white;
+}
+
+.button-edit:hover {
+    background-color: #0056b3;
+}
+
+/* Botão de Excluir (cor vermelha) */
+.button-delete {
+    background-color: #ff4b4b;
+    color: white;
+}
+
+.button-delete:hover {
+    background-color: #c73232;
 }

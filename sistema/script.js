@@ -6,8 +6,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const dataEscolhida = document.getElementById("data-escolhida");
     const selectRegisterType = document.getElementById("register-type");
     const alertaSucesso = document.getElementById("alerta-ponto-registrado");
+    const dialogHora = document.getElementById("dialog-hora");  // Novo elemento
     
-
     diaSemana.textContent = getWeekDay();
     dataAtual.textContent = getCurrentDate();
     updateContentHour();
@@ -32,6 +32,8 @@ document.addEventListener("DOMContentLoaded", function () {
         const dialogPonto = document.getElementById("dialog-ponto");
         const dialogData = document.getElementById("dialog-data");
         dialogData.textContent = "Data: " + getCurrentDate();
+        
+        dialogHora.textContent = "Hora: " + getCurrentTime();  // Atualiza a hora ao abrir o diálogo
         dialogPonto.showModal();
     }
 
@@ -132,7 +134,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function getCurrentTime() {
         const now = new Date();
-        return now.toLocaleTimeString("pt-BR");
+        return now.toLocaleTimeString("pt-BR", { hour: '2-digit', minute: '2-digit', second: '2-digit' });
     }
 
     function getCurrentDate() {
@@ -147,10 +149,3 @@ document.addEventListener("DOMContentLoaded", function () {
 
     renderReport();
 });
-
-
-setTimeout(() => {
-    const mensagem = document.getElementById('alerta-ponto-registrado');
-    mensagem.classList.add('hidden');
-  }, 5000);
-  
