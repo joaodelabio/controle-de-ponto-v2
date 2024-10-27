@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const dataEscolhida = document.getElementById("data-escolhida");
     const selectRegisterType = document.getElementById("register-type");
     const alertaSucesso = document.getElementById("alerta-ponto-registrado");
+    
 
     diaSemana.textContent = getWeekDay();
     dataAtual.textContent = getCurrentDate();
@@ -146,3 +147,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     renderReport();
 });
+
+
+setTimeout(() => {
+    const mensagem = document.getElementById('alerta-ponto-registrado');
+    mensagem.classList.add('hidden');
+  }, 5000);
+  
