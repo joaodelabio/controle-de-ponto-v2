@@ -11,17 +11,17 @@ document.addEventListener("DOMContentLoaded", function () {
     dataAtual.textContent = getCurrentDate();
     updateContentHour();
 
-    setInterval(updateContentHour, 1000); // Atualiza a hora a cada segundo
+    setInterval(updateContentHour, 1000); 
 
     btnRegistrarPonto.addEventListener("click", openDialog);
 
     document.getElementById("btn-dialog-register").addEventListener("click", async () => {
         const register = await getObjectRegister(selectRegisterType.value);
-        if (register) {  // Se o registro não for nulo
+        if (register) { 
             saveRegisterLocalStorage(register);
             showSuccessAlert();
             closeDialog();
-            renderReport();  // Atualizar o relatório após salvar
+            renderReport();  
         }
     });
 
@@ -107,13 +107,13 @@ document.addEventListener("DOMContentLoaded", function () {
         const selectedDate = new Date(date);
         const today = new Date();
 
-        today.setHours(0, 0, 0, 0);  // Zera as horas para comparar apenas a data
+        today.setHours(0, 0, 0, 0); 
         return selectedDate > today;
     }
 
     function renderReport() {
         const reportContainer = document.getElementById("report-container");
-        reportContainer.innerHTML = "";  // Limpa o relatório antes de renderizar novamente
+        reportContainer.innerHTML = "";  
 
         const registers = JSON.parse(localStorage.getItem("register")) || [];
 
