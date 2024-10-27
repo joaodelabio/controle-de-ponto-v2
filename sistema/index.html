@@ -3,38 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ui papai</title>
-    <link rel="stylesheet" href="/sistema/style.css">
+    <title>Sistema de Registro de Pontos</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
-    <div class="data-hora">
-        <p id="dia-semana"></p>
-        <p id="data-atual"></p>
-        <p id="hora-atual"></p>       
-        <button id="btn-registrar-ponto">Registrar ponto</button>    
-    </div>
 
-    <dialog id="dialog-ponto">
-        <p>Escolha uma data:</p>
-        <input type="date" id="data-escolhida">
-        <p id="dialog-data">Data:</p>
-        <p id="dialog-hora">Hora:</p>
-        <select name="register-type" id="register-type">
-            <option value="entrada">Entrada</option>
-            <option value="intervalo">Intervalo</option>
-            <option value="volta-intervalo">Volta intervalo</option>
-            <option value="saida">Saída</option>
-        </select>
-        <button id="btn-dialog-register">Registrar</button>
-        <p id="dialog-ultimo-registro" >ultimo ponto do usuario</p>
-        <button id="dialog-fechar">X</button>
-    </dialog>
+<div class="data-hora">
+    <p id="dia-semana"></p>
+    <p id="data-atual"></p>
+    <p id="hora-atual"></p>
+    <button id="btn-registrar-ponto">Registrar ponto</button>
+</div>
 
-    <div id="alerta-ponto-registrado" class="hidden">
-        <p>Ponto batido com sucesso</p>
-    </div>
+<dialog id="dialog-ponto">
+    <p>Escolha uma data:</p>
+    <input type="date" id="data-escolhida">
+    <p id="dialog-data">Data:</p>
+    <p id="dialog-hora">Hora:</p>
+    <select id="register-type">
+        <option value="entrada">Entrada</option>
+        <option value="intervalo">Intervalo</option>
+        <option value="volta-intervalo">Volta intervalo</option>
+        <option value="saida">Saída</option>
+    </select>
+    <textarea id="observacao" placeholder="Observação"></textarea>
+    <input type="file" id="upload-arquivo">
+    <textarea id="justificativa-ausencia" placeholder="Justificativa para ausência"></textarea>
+    <button id="btn-dialog-register">Registrar</button>
+    <p id="dialog-ultimo-registro">Último ponto do usuário</p>
+    <button id="dialog-fechar">Fechar</button>
+</dialog>
 
-    <script src="/sistema/script.js"></script>
+<div id="alerta-ponto-registrado" class="hidden">
+    <p>Ponto registrado com sucesso</p>
+</div>
+
+<!-- Botão para abrir o relatório -->
+<button onclick="window.location.href='report.html'">Visualizar Relatório de Marcações</button>
+
+<script src="script.js"></script>
 </body>
 </html>
