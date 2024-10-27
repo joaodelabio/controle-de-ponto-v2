@@ -54,6 +54,18 @@ button:hover {
     color: #555;
 }
 
+.button-edit,
+.button-delete {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    display: inline-block;
+    margin-right: 10px; /* Para separação entre os botões */
+}
+
 /* Botão de Editar (cor azul) */
 .button-edit {
     background-color: #007BFF;
